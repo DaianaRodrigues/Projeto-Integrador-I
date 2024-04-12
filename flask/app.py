@@ -34,7 +34,6 @@ def agendar(servico_id):
     
     return render_template('agendar.html', servico_id=servico_id)
 
-"""
 #Configurando o banco de dados
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dados.db'
 db = SQLAlchemy(app)
@@ -50,7 +49,7 @@ class Servico(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100))
     preco = db.Column(db.Float)
-"""
+
 # Outras rotas e configurações...
 if __name__ == "__main__":
     app.run(debug=True)
