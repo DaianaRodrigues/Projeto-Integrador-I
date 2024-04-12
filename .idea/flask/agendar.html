@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Serviço</title>
+</head>
+<body>
+    <h1>Agendar Serviço</h1>
+    <form action="{{ url_for('agendar', servico_id=servico_id) }}" method="POST">
+        <label for="cliente">Nome do Cliente:</label><br>
+        <input type="text" id="cliente" name="cliente"><br><br>
+        <input type="submit" value="Agendar">
+    </form>
+</body>
+</html>
