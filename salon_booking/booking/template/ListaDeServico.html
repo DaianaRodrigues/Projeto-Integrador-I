@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Serviços</title>
+</head>
+<body>
+    <h1>Lista de Serviços</h1>
+    <ul>
+        {% for service in services %}
+            <li>{{ service.name }} - R$ {{ service.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+{% extends 'index.html' %}
+
+{% block title %}Lista de Serviços{% endblock %}
+
+{% block content %}
+    <h1>Lista de Serviços</h1>
+    <ul>
+        {% for servico in servico %}
+            <li>{{ servico.nome }} - R$ {{ servico.preco }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
