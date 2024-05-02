@@ -1,5 +1,5 @@
 """
-URL configuration for salon_booking project.
+URL configuration for helloworld project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -14,11 +14,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
-from salon_booking import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.listaDeServico, name='service_list'),
-    path('', views.apontamento, name='appointment_create'),
+    path('admin/', admin.site.urls),
+    path('', include('tasks.urls'))
 ]
-

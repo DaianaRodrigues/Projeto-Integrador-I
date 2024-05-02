@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Tarefas{% endblock %} 
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Vamos agendar o seu procedimento!</h1>
+    <div class="col-9 search-div">
+        <p>Usuário</p>
+        <input type="text" id="search" name="search" placeholder="Digite o nome do seu usuario">
+        <i class="fas fa-search"></i>
+    </div>
+    <div class="col-9 search-div">
+        <p>Senha</p>
+        <input type="text" id="search" name="search" placeholder="Digite a sua senha">
+        <i class="fas fa-search"></i>
+    </div>
+    <div class="col-2 add-div">
+        <i class=""></i>Login
+    </div>
+    <div class="col-2 add-div">
+        <i class="fas fa-plus"></i>Criar conta
+    </div>
+</div>
+{% endblock %}

@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from .models import Service
 
-def service_list(request):
+def listaDeServico(request):
     services = Service.objects.all()
     return render(request, 'booking/ListaDeServico.html', {'services': services})
 
-def appointment_create(request):
+def apontamento(request):
     if request.method == 'POST':
         # Processar o formulário de agendamento aqui
         pass
