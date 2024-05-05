@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Agendamentos{% endblock %} 
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Bem-vindo(a), {{ user.username }}!</h1>
+    <p>Você está logado(a) como {{ user.username }}.</p>
+    <h2>Faça seu agendamento:</h2>
+    <form method="post" action="{% url 'agendar' %}">
+        {% csrf_token %}
+        <!-- Campos para o agendamento -->
+        <label for="data">Data:</label><br>
+        <input type="date" id="data" name="data"><br>
+        <label for="horario">Horário:</label><br>
+        <input type="time" id="horario" name="horario"><br><br>
+        <button type="submit">Agendar</button>
+    </form>
+    <h2>Seus agendamentos:</h2>
+    <!-- Lista de agendamentos do usuário -->
+    <ul>
+        {% for agendamento in user.agendamentos.all %}
+            <li>{{ agendamento.data }} - {{ agendamento.horario }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% endblock %}
+

@@ -8,4 +8,10 @@ def helloworld(request):
 def taskList(request):
     return render(request, 'tasks/list.html')
 
+def agendamento_view(request):
+    return render(request, 'tasks/agendamento.html')
+
+def cadastro_view(request):
+    return render(request, 'tasks/cadastro.html')
+
 

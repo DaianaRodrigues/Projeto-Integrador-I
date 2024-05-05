@@ -1,20 +1,36 @@
 .container-fluid {
     padding: 0;
     background: linear-gradient(#CA5A5D, #842124);
+    justify-items: center;
+    justify-content: center;
 }
 
 /* NavBar */
 
+.list-div{
+   display: grid;
+   justify-items: center;
+}
+
+button {
+    margin-top: 10px;
+    display: flex;
+}
+
+.cadastro {
+    margin-top: 10px;
+}
+
+.search-div {
+  margin-bottom: 10px;
+}
+
 p {
+    text-align: center;
     color: #000000;
 }
 
-input {
-    color: #FFFFFF;
-}
-
 .navbar {
-    border-bottom: 1px solid #333;
     margin-bottom: 20px;
 }
 
@@ -31,77 +47,11 @@ input {
     letter-spacing: 1px;
 }
 
-/* Botão de Adicionar */
-
-.add-div {
-    background-color: none;
-    cursor: pointer;
-    display: inline-block;
-    color: #000000;
-    padding: 8px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-.fas.fa-plus {
-    color: #fff;
-    margin-right: 10px;
-    margin-left: 5px;
-}
-
-/* Search */
-
-.fas.fa-search {
-    position: absolute;
-    top: 12px;
-    right: 20px;
-}
-
-.search-div {
-    padding: 0px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    display: inline-block;
-}
-
-/* Lista de tarefas */
-
-.list-div {
-    padding: 0;
-}
-
-.task-list {
-    padding-left: 0;
-}
-
-.task-item {
-    list-style: none;
-    font-size: 20px;
-    height: 50px;
-    padding-top: 10px;
-    border: 1px dashed #ccc;
-}
-
-.fas.fa-trash .fas.fa-edit {
-    cursor: pointer;
-    margin: 5px;
-    font-size: 20px;
-    float: right;
-}
-
-.fas.fa-trash {
-    color: #db1e47;
-}
-
-.fas.fa-edit {
-    color: #13c43f;
-}
-
 /* Rodapé */
 
 footer {
     background-color: #333;
-    height: 21px;
+    height: 170px;
     border-top: 2px solid #202020;
 }
 
