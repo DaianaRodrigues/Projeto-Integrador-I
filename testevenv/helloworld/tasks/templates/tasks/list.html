@@ -7,11 +7,11 @@
         {% csrf_token %}
         <div class="search-div">
             <p>Usuário</p>
-            <input type="text" id="username" name="username" placeholder="Digite o seu usuário">
+            <input type="text" id="username" name="username" placeholder="Digite o seu usuário" required>
         </div>
         <div class="search-div">
             <p>Senha</p>
-            <input type="password" id="password" name="password" placeholder="Digite a sua senha">
+            <input type="password" id="password" name="password" placeholder="Digite a sua senha" required>
         </div>
     </form>
     <button type="submit">Login</button>

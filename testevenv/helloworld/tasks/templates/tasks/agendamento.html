@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Agendamentos{% endblock %} 
+{% block title %}Agendamento{% endblock %} 
 
 {% block content %}
 <div class="offset-1 col-10 list-div">
     <h1>Bem-vindo(a), {{ user.username }}!</h1>
     <p>Você está logado(a) como {{ user.username }}.</p>
     <h2>Faça seu agendamento:</h2>
-    <form method="post" action="{% url 'agendar' %}">
+    <form method="post" action="{% url 'agendamento' %}">
         {% csrf_token %}
         <!-- Campos para o agendamento -->
         <label for="data">Data:</label><br>
