@@ -33,4 +33,3 @@ class Agendamento(models.Model):
 
     def __str__(self):
         return f"Agendamento para {self.cliente} com {self.barbeiro} em {self.data_hora}"
-

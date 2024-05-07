@@ -7,6 +7,10 @@
 
 /* NavBar */
 
+.logo {
+  width: 50px;
+}
+
 .list-div{
    display: grid;
    justify-items: center;
@@ -15,10 +19,6 @@
 button {
     margin-top: 10px;
     display: flex;
-}
-
-.cadastro {
-    margin-top: 10px;
 }
 
 .search-div {
@@ -30,14 +30,6 @@ p {
     color: #000000;
 }
 
-.navbar {
-    margin-bottom: 20px;
-}
-
-.navbar-nav {
-    margin: auto;
-}
-
 .navbar-brand {
     font-weight: bold;
 }
@@ -46,6 +38,10 @@ p {
     color: #333;
     letter-spacing: 1px;
 }
+
+/* Pagina de cadastro */
+
+
 
 /* Rodapé */
 
