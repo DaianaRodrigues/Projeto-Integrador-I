@@ -6,21 +6,25 @@
 <div class="offset-1 col-10 list-div">
     <h1>Bem-vindo(a), {{ user.username }}!</h1>
     <p>Você está logado(a) como {{ user.username }}.</p>
-    <h2>Faça seu agendamento:</h2>
-    <form method="post" action="{% url 'agendamento' %}">
+    <h2>Vamos agendar um de nossos procedimetos?</h2>
+    <form method="post" action="{% url 'cadastro_sucesso' %}">
         {% csrf_token %}
-        <ul>
-            <li><a href="">Procedimento 1</a></li>
-            <li><a href="">Procedimento 2</a></li>
-            <li><a href="">Procedimento 3</a></li>
-            <li><a href="">Procedimento 4</a></li>
+
+        {% load static %}
+        <ul class="list-group">
+            <li class="list-group-item"><img class="icones-agen" src="{% static 'midias/corte-de-cabelo.png' %}" alt="">Corte de Cabelo</li><br>
+            <li class="list-group-item"><img class="icones-agen" src="{% static 'midias/barbearia.png' %}" alt="">Barba</li><br>
+            <li class="list-group-item"><img class="icones-agen" src="{% static 'midias/tintura-de-cabelo.png' %}" alt="">Tintura</li><br>
+            <li class="list-group-item"><img class="icones-agen" src="{% static 'midias/sobrancelha.png' %}" alt="">Sobrancelha</li><br>
             <!-- Adicione mais procedimentos conforme necessário -->
         </ul>
-        <label for="data">Data:</label><br>
-        <input type="date" id="data" name="data"><br>
-        <label for="horario">Horário:</label><br>
-        <input type="time" id="horario" name="horario"><br><br>
+    <div class="data">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" name="horario">
         <button type="submit">Agendar</button>
+    </div>
     </form>
     <h2>Seus agendamentos:</h2>
     <!-- Lista de agendamentos do usuário -->

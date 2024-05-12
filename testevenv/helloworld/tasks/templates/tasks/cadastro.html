@@ -12,19 +12,24 @@
 </head>
 <body>
     <div class="cadastros">
-        <h1>Cadastro</h1>
-        <form method="post" action="{% url 'cadastro' %}">
+        <h1>Cadastrar-se</h1>
+        <form method="post" action="{% url 'cadastro_sucesso' %}">
             {% csrf_token %}
             <!-- Campos para o cadastro -->
             <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome"><br>
+            <input class="texto" type="text" id="nome" name="nome"><br>
             <label for="telefone">Telefone:</label><br>
-            <input type="text" id="telefone" name="telefone"><br>
+            <input class="texto" type="text" id="telefone" name="telefone"><br>
             <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br>
+            <input class="texto" type="email" id="email" name="email" placeholder="name@example.com"><br>
             <label for="senha">Senha:</label><br>
-            <input type="password" id="senha" name="senha"><br><br>
-            <button type="submit">Cadastrar</button>
+            <input class="texto" type="password" id="senha" name="senha" aria-describedby="passwordHelpInline"><br><br>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                  Must be 8-20 characters long.
+                </span>
+              </div>
+            <button class="criar" type="submit">Criar</button>
         </form>
     </div>
 </body>

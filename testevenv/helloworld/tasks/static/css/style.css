@@ -16,9 +16,24 @@
    justify-items: center;
 }
 
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.texto {
+    border-radius: 8px;
+}
+
+.cadastro{
+    color: #000000;
+}
+
 button {
+    background: linear-gradient(#817777, #1B1919);
+    color: white;
+    border-radius: 10px;
     margin-top: 10px;
-    display: flex;
+    margin-left: 70px;
 }
 
 .search-div {
@@ -41,6 +56,31 @@ p {
 
 /* Pagina de cadastro */
 
+div.cadastros{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.criar {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 15px;
+}
+
+/* Agendamento */
+
+.list-group-item {
+    border-radius: 10px;
+}
+
+.icones-agen {
+    width: 50px;
+}
+
+.data {
+    display: grid;
+    justify-items: center;
+}
 
 
 /* Rodapé */

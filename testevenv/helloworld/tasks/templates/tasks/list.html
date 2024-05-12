@@ -4,7 +4,9 @@
 <div class="list-div">
     {% load static %}
 
-    <img class="logo" src="tasks/midias/logoBarbearia.png" alt="Logo da Barbearia">
+    <img class="logo" src="{% static 'logoBarbearia.png' %}" alt="Logo da Barbearia">
+
+    {% endblock %}
 
     {% if messages %}
     <ul class="messages">
@@ -16,20 +18,20 @@
 
     <h1>Vamos agendar o seu procedimento!</h1>
 
-    <form method="post" action="{% url 'login' %}">
+    <form method="post" action="{% url 'agendamento' %}">
         {% csrf_token %}
         <div class="search-div">
             <p>Usuário</p>
-            <input type="text" id="username" name="username" placeholder="Digite o seu usuário" required>
+            <input class="texto" type="text" id="username" name="username" placeholder="Digite o seu usuário" required>
         </div>
         <div class="search-div">
             <p>Senha</p>
-            <input type="password" id="password" name="password" placeholder="Digite a sua senha" required>
+            <input class="texto" type="password" id="password" name="password" placeholder="Digite a sua senha" required>
         </div>
         <button type="submit">Login</button>
     </form>
     <div class="search-div">
-        <p class="cadastro">Não tem uma conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
+        <p>Não tem uma conta? <a class="cadastro" href="{% url 'cadastro' %}">Criar conta</a></p>
     </div>
 </div>
 {% endblock %}
