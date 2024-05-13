@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}agendamento Realizado com Sucesso{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<div class="container">
+    <h1 class="card-title">Agendamento realizado com sucesso!! </h1>
+    <img class="verificado" src="{% static 'midias/verificado.png' %}" alt="Verificado">
+    <p>Nós da Barbearia Royal agradecemos a preferencia.</p>
+    <img class="logo" src="{% static 'midias/logoBarbearia.png' %}" alt="Logo da Barbearia">     
+</div>
+{% endblock %}

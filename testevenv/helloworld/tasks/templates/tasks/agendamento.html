@@ -7,7 +7,7 @@
     <h1>Bem-vindo(a), {{ user.username }}!</h1>
     <p>Você está logado(a) como {{ user.username }}.</p>
     <h2>Vamos agendar um de nossos procedimetos?</h2>
-    <form method="post" action="{% url 'cadastro_sucesso' %}">
+    <form method="post" action="{% url 'agendamento' %}">
         {% csrf_token %}
 
         {% load static %}
@@ -23,7 +23,7 @@
         <input type="date" id="data" name="data">
         <label for="horario">Horário:</label>
         <input type="time" id="horario" name="horario">
-        <button type="submit">Agendar</button>
+        <button class="criar" type="submit">Agendar</button>
     </div>
     </form>
     <h2>Seus agendamentos:</h2>
@@ -33,7 +33,7 @@
             <li>{{ agendamento.data }} - {{ agendamento.horario }}</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'principal' %}">Logout</a>
+    <a href="{% url 'lista' %}">Sair</a>
 </div>
 {% endblock %}
 

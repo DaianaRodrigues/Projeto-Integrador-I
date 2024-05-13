@@ -1,5 +1,3 @@
-<!-- cadastro_sucesso.html -->
-
 {% extends 'base.html' %}
 
 {% block title %}Cadastro Realizado com Sucesso{% endblock %}
@@ -8,13 +6,10 @@
 
 {% load static %}
 <div class="container">
-    <img class="logo" src="{% static 'logoBarbearia.png' %}" alt="Logo da Barbearia">     
-    <div>
+    <img class="logo" src="{% static 'midias/logoBarbearia.png' %}" alt="Logo da Barbearia">     
         <h1 class="card-title">Cadastro Realizado com Sucesso!!</h1>
-        <i class="fa-solid fa-circle-check fa-2xl" style="color: #63E6BE;"></i>
+        <img class="verificado" src="{% static 'midias/verificado.png' %}" alt="Verificado">
         <p>Nós da Barbearia Royal agradecemos a preferencia.</p>
-        
-    </div>
-    <a class="cadastro" href="{% url 'agendamento' %}">Ir para tela de agendamentos</a>
+    <a class="cadastro">Ir para tela de agendamentos</a>
 </div>
 {% endblock %}

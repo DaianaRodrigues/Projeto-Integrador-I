@@ -1,34 +1,23 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from .forms import UsuarioForm
 
-from .models import Usuario
-
-def taskList(request):
+def lista(request):
     return render(request, 'tasks/list.html')
 
 def pagina_prin(request):
     return render(request, 'base.html')
 
 def agendamento_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        
-        # Verifica se o usuário existe no banco de dados
-        try:
-            usuario = Usuario.objects.get(username=username)
-            if usuario.password != password:
-                messages.error(request, 'Senha incorreta')
-                return render(request, 'tasks/list.html')
-        except Usuario.DoesNotExist:
-            messages.error(request, 'Usuário inválido')
-            return render(request, 'tasks/list.html')
-
-        # Se o usuário existe e a senha está correta, faça o que for necessário (como redirecionar para outra página)
-        # ...
-    return render(request, 'tasks/agendamento.html')
+     if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            # Aqui você pode adicionar lógica adicional, como criptografar a senha antes de salvar
+            form.save()
+            return redirect('cadastro_sucesso')
+        else:
+            form = UsuarioForm()
+        return render(request, 'tasks/agendamento.html', {'form': form})
 
 def cadastro_view(request):
     if request.method == 'POST':
@@ -50,5 +39,17 @@ def cadastro_view(request):
 
 def pagina_sucesso(request):
     return render(request, 'tasks/cadastro_sucesso.html')
+
+def agenda_sucesso(request):
+    return render(request, 'tasks/agenda_sucesso.html')
+
+def minha_view(request):
+    if request.user.is_authenticated:
+        username = request.user.username
+        # Faça o que quiser com as informações do usuário autenticado
+        return render(request, 'agendamento.html', {'username': username})
+    else:
+        # Redirecione o usuário para a página de login
+        return redirect('cadastro')
 
 

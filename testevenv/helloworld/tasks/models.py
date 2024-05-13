@@ -7,7 +7,7 @@ class Barbeiro(models.Model):
 
     def __str__(self):
         return self.nome
-
+    
 class Servico(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.DecimalField(max_digits=8, decimal_places=2)
@@ -17,12 +17,13 @@ class Servico(models.Model):
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=100)
-    numero_tel = models.CharField(max_length=20)
-    email = models.EmailField()
+    telefone = models.CharField(max_length=20, null=True)
+    email = models.EmailField(unique=True)
+    senha = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nome
-
+    
 class Agendamento(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     barbeiro = models.ForeignKey(Barbeiro, on_delete=models.CASCADE)
