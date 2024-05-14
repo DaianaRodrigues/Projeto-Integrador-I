@@ -10,6 +10,6 @@
         <h1 class="card-title">Cadastro Realizado com Sucesso!!</h1>
         <img class="verificado" src="{% static 'midias/verificado.png' %}" alt="Verificado">
         <p>Nós da Barbearia Royal agradecemos a preferencia.</p>
-    <a class="cadastro">Ir para tela de agendamentos</a>
+    <a class="cadastro" href="{% url 'agendamento' %}">Ir para tela de agendamentos</a>
 </div>
 {% endblock %}

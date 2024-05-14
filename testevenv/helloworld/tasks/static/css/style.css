@@ -77,8 +77,10 @@ label {
 
 /* Agendamento */
 
-.list-group-item {
+
+.btn-check.btn {
     border-radius: 10px;
+    background-color: none;
 }
 
 .icones-agen {
@@ -110,6 +112,10 @@ label {
 
 .cadastro:hover {
     color: #f5f5f5;
+}
+
+.logo1 {
+    width: 80px;
 }
 
 /* Rodapé */

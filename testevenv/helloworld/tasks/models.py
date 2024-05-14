@@ -21,6 +21,8 @@ class Cliente(models.Model):
     email = models.EmailField(unique=True)
     senha = models.CharField(max_length=20)
 
+    USERNAME_FIELD = 'email'
+
     def __str__(self):
         return self.nome
     
@@ -35,11 +37,13 @@ class Agendamento(models.Model):
     def __str__(self):
         return f"Agendamento para {self.cliente} com {self.barbeiro} em {self.data_hora}"
     
-class Usuario(models.Model):
-    username = models.CharField(max_length=100, unique=True)  # Define o campo username como único
-    password = models.CharField(max_length=100)
+class PerfilUsuario(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # Adicione quaisquer campos adicionais que deseja ao perfil de usuário
+    telefone = models.CharField(max_length=20)
+    endereco = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.username
+        return self.user.username
 
 

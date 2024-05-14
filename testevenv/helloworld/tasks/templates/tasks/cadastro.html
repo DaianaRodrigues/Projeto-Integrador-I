@@ -16,19 +16,6 @@
         <form method="post" action="{% url 'cadastro_sucesso' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <label for="nome">Nome:</label><br>
-            <input class="texto" type="text" id="nome" name="nome" required><br>
-            <label for="telefone">Telefone:</label><br>
-            <input class="texto" type="text" id="telefone" name="telefone" placeholder="(xx)xxxxx-xxxx" required><br>
-            <label for="email">Email:</label><br>
-            <input class="texto" type="email" id="email" name="email" placeholder="name@example.com" required><br>
-            <label for="senha">Senha:</label><br>
-            <input class="texto" type="password" id="senha" name="senha" aria-describedby="passwordHelpInline" required>
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                  A senha tem que ter de 8 a 20 caracteres.
-                </span>
-              </div>
             <button class="criar" type="submit">Criar</button>
         </form>
     </div>
