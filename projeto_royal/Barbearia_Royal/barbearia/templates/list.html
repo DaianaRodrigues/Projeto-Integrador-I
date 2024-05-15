@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="list-div">
+    {% load static %}
+
+    <img class="logo" src="{% static 'midias/logoBarbearia.png' %}" alt="Logo da Barbearia">
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h1>Vamos agendar o seu procedimento!</h1>
+
+    <form method="post" action="{% url 'agendamento' %}">
+        {% csrf_token %}
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div class="textfield">
+                    <img class="user" src="fotos/avatar.png" alt="">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="username" id="username" placeholder="Usuário" required>
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="password" type="password" placeholder="Senha" required>
+                </div>
+                <button class="btn-login">Login</button>
+            </div>
+        </div>
+    </form>
+    <div class="search-div">
+        <p>Não tem uma conta? <a class="cadastro" href="{% url 'cadastro' %}">Criar conta</a></p>
+    </div>
+</div>
+{% endblock %}
