@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block title %}Agendamento{% endblock %} 
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Bem-vindo(a), {{ user.username }}!</h1>
+    <p>Você está logado(a) como {{ user.username }}.</p>
+    <h2>Vamos agendar um de nossos procedimetos?</h2>
+    <form method="post" action="{% url 'agenda_sucesso' %}">
+        {% csrf_token %}
+
+        {% load static %}
+    <div class="agenda">
+        <ul class="list-group">
+            <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
+            <label class="btn" for="option5"><img class="icones-agen" src="{% static 'midias/corte-de-cabelo.png' %}" alt="">Corte de Cabelo</label><br>
+
+            <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
+            <label class="btn" for="option6"><img class="icones-agen" src="{% static 'midias/barbearia.png' %}" alt="">Barba</label><br>
+
+            <input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off">
+            <label class="btn" for="option7"><img class="icones-agen" src="{% static 'midias/tintura-de-cabelo.png' %}" alt="">Tintura</label><br>
+
+            <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off">
+            <label class="btn" for="option8"><img class="icones-agen" src="{% static 'midias/sobrancelha.png' %}" alt="">Sobrancelha</label><br>
+
+        </ul>
+        <div class="data">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data">
+            <label for="horario">Horário:</label>
+            <input type="time" id="horario" name="horario">
+            <button class="criar" type="submit">Agendar</button>
+        </div>
+        <a class="cadastro" href="{% url 'lista' %}">Sair</a>
+    </div>
+    </form>
+</div>
+    <!-- <h2>Seus agendamentos:</h2>
+     Lista de agendamentos do usuário 
+    <ul>
+        {% for agendamento in user.agendamentos.all %}
+            <li>{{ agendamento.data }} - {{ agendamento.horario }}</li>
+        {% endfor %}
+    </ul> -->
+{% endblock %}
+
